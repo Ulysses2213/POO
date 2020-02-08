@@ -38,6 +38,9 @@ public class Portada extends javax.swing.JFrame {
         setBackground(new java.awt.Color(6, 163, 203));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        setMaximumSize(new java.awt.Dimension(442, 342));
+        setMinimumSize(new java.awt.Dimension(442, 342));
+        setResizable(false);
 
         lbUPIICSA.setText("<html><center>IPN- UPIICSA</center> <br> PROGRAMACION ORIENTADA A OBJETOS<html>");
 
@@ -46,6 +49,11 @@ public class Portada extends javax.swing.JFrame {
         lbIntegrantes.setText("<html><center>INTEGRANTES:</center><ul><li>Núñez Hernandez Ulises</li><li>Demian</li><li>Emilio</li></ul></html>");
 
         btContinuar.setText("CONTINUAR");
+        btContinuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btContinuarActionPerformed(evt);
+            }
+        });
 
         btSalir.setText("SALIR");
         btSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +105,13 @@ public class Portada extends javax.swing.JFrame {
 
     private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
         // TODO add your handling code here:
+        System.exit(WIDTH);
     }//GEN-LAST:event_btSalirActionPerformed
+
+    private void btContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContinuarActionPerformed
+        EntradaSalida es = new EntradaSalida();
+        es.setVisible(true);
+    }//GEN-LAST:event_btContinuarActionPerformed
 
     /**
      * @param args the command line arguments
