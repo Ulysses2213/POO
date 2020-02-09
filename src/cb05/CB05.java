@@ -15,8 +15,9 @@ public class CB05 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Portada portada = new Portada();
-        portada.setVisible(true);
+        Portada portada = new Portada();  //Se intancia a la siguiente pantalla
+        portada.setVisible(true);         //Se muestra la pantalla de portada
     }
+
     
 }

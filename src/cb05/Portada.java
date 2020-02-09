@@ -10,10 +10,10 @@ package cb05;
  * @author gem2u
  */
 public class Portada extends javax.swing.JFrame {
-
     /**
      * Creates new form Portada
      */
+    
     public Portada() {
         initComponents();
     }
@@ -105,12 +105,13 @@ public class Portada extends javax.swing.JFrame {
 
     private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
         // TODO add your handling code here:
-        System.exit(WIDTH);
+        System.exit(WIDTH); //Para salir del programa
     }//GEN-LAST:event_btSalirActionPerformed
 
     private void btContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContinuarActionPerformed
         EntradaSalida es = new EntradaSalida();
-        es.setVisible(true);
+        es.setVisible(true);  //Se hace visible la pantalla de entrada/salida
+        dispose(); //Cerrar la ventana anterior
     }//GEN-LAST:event_btContinuarActionPerformed
 
     /**
