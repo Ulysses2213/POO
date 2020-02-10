@@ -6,6 +6,7 @@
 package cb05;
 import javax.swing.JOptionPane;
 import cb05.beans.EntradaSalidaBeans;
+import cb05.ConB1B2;
 
 /**
  *
@@ -39,7 +40,7 @@ public class EntradaSalida extends javax.swing.JFrame {
         lbMensajeResultado = new javax.swing.JLabel();
         lbB2 = new javax.swing.JLabel();
         cbB2 = new javax.swing.JComboBox<>();
-        btContinuar = new javax.swing.JButton();
+        btCalcular = new javax.swing.JButton();
         btTerminar = new javax.swing.JButton();
         btCancelar = new javax.swing.JButton();
         lbResultadoFinal = new javax.swing.JLabel();
@@ -76,10 +77,10 @@ public class EntradaSalida extends javax.swing.JFrame {
             }
         });
 
-        btContinuar.setText("CONTINUAR");
-        btContinuar.addActionListener(new java.awt.event.ActionListener() {
+        btCalcular.setText("CALCULAR");
+        btCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btContinuarActionPerformed(evt);
+                btCalcularActionPerformed(evt);
             }
         });
 
@@ -135,7 +136,7 @@ public class EntradaSalida extends javax.swing.JFrame {
                 .addContainerGap(88, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(btContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -150,11 +151,12 @@ public class EntradaSalida extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbB1)
-                            .addComponent(cbB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbResultadoDigitosPermitidos, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbMensajeDigitos))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lbB1)
+                                .addComponent(cbB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbMensajeDigitos)))
                         .addGap(29, 29, 29)
                         .addComponent(lbMensajeNumero))
                     .addComponent(tfEntradaNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -168,7 +170,7 @@ public class EntradaSalida extends javax.swing.JFrame {
                     .addComponent(lbResultadoFinal))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btTerminar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
@@ -177,14 +179,17 @@ public class EntradaSalida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContinuarActionPerformed
+    private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
         // TODO add your handling code here:
-        cbB1.setSelectedIndex(0);//Reset al B1
-        cbB2.setSelectedIndex(1);//Reset al B2
-        lbResultadoDigitosPermitidos.setText(" ");//Borrar el resultado de los digitos permitidos
-        tfEntradaNumero.setText(" ");//Borrar la entrada del numero
-        lbResultadoFinal.setText(" ");//Borrar el resultado final
-    }//GEN-LAST:event_btContinuarActionPerformed
+        String entrada = tfEntradaNumero.getText();
+        int numero = Integer.parseInt(entrada);
+        
+        EntradaSalidaBeans esNumero = new EntradaSalidaBeans(); 
+        esNumero.setEntradaNumero(numero);
+        
+        ConB1B2 resultado = new ConB1B2();
+        lbResultadoFinal.setText(resultado.hacerCalculo());
+    }//GEN-LAST:event_btCalcularActionPerformed
 
     private void btTerminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTerminarActionPerformed
         // TODO add your handling code here:
@@ -264,13 +269,11 @@ public class EntradaSalida extends javax.swing.JFrame {
         int valorB1 = Integer.parseInt(valorCB1);
         String valorCB2 = (String) cbB2.getSelectedItem();
         int valorB2 = Integer.parseInt(valorCB2);
+        
         EntradaSalidaBeans esB2 = new EntradaSalidaBeans();
-        esB2.setB1(valorB2);
-        validarBox(valorB1, valorB2);
-        String entrada = tfEntradaNumero.getText();
-        int numero = Integer.parseInt(entrada);
-        EntradaSalidaBeans esNumero = new EntradaSalidaBeans(); 
-        esNumero.setEntradaNumero(numero);
+        esB2.setB2(valorB2);
+        
+        validarBox(valorB1, valorB2);   
     }//GEN-LAST:event_cbB2ActionPerformed
 
     public void validarBox(int valorB1, int valorB2){ 
@@ -316,8 +319,8 @@ public class EntradaSalida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCalcular;
     private javax.swing.JButton btCancelar;
-    private javax.swing.JButton btContinuar;
     private javax.swing.JButton btTerminar;
     private javax.swing.JComboBox<String> cbB1;
     private javax.swing.JComboBox<String> cbB2;

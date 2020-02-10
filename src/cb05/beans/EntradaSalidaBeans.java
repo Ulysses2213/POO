@@ -11,6 +11,8 @@ package cb05.beans;
  */
 public class EntradaSalidaBeans {
     int B1;
+    int B2;
+    int entradaNumero;
 
     public int getB1() {
         return B1;
@@ -35,7 +37,6 @@ public class EntradaSalidaBeans {
     public void setEntradaNumero(int entradaNumero) {
         this.entradaNumero = entradaNumero;
     }
-    int B2;
-    int entradaNumero;
+    
 
 }
