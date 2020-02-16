@@ -126,7 +126,7 @@ public class EntradaSalida extends javax.swing.JFrame {
                                 .addComponent(cbB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(lbMensajeDigitos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(lbResultadoDigitosPermitidos))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbMensajeResultado)
@@ -143,7 +143,7 @@ public class EntradaSalida extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(97, 97, 97)
                         .addComponent(lbTituloBN)))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(btContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,16 +299,16 @@ public class EntradaSalida extends javax.swing.JFrame {
     private javax.swing.JButton btCancelar;
     private javax.swing.JButton btContinuar;
     private javax.swing.JButton btTerminar;
-    private javax.swing.JComboBox<String> cbB1;
-    private javax.swing.JComboBox<String> cbB2;
+    public javax.swing.JComboBox<String> cbB1;
+    public javax.swing.JComboBox<String> cbB2;
     private javax.swing.JLabel lbB1;
     private javax.swing.JLabel lbB2;
     private javax.swing.JLabel lbMensajeDigitos;
     private javax.swing.JLabel lbMensajeNumero;
     private javax.swing.JLabel lbMensajeResultado;
-    private javax.swing.JLabel lbResultadoDigitosPermitidos;
-    private javax.swing.JLabel lbResultadoFinal;
+    public javax.swing.JLabel lbResultadoDigitosPermitidos;
+    public javax.swing.JLabel lbResultadoFinal;
     private javax.swing.JLabel lbTituloBN;
-    private javax.swing.JTextField tfEntradaNumero;
+    public javax.swing.JTextField tfEntradaNumero;
     // End of variables declaration//GEN-END:variables
 }

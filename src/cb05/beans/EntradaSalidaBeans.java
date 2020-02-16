@@ -12,8 +12,17 @@ package cb05.beans;
 public class EntradaSalidaBeans {
     int B1;
     int B2;
+    int code;
     String entradaNumero;
 
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+   
     public int getB1() {
         return B1;
     }
