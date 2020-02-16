@@ -6,7 +6,7 @@
 package cb05;
 import javax.swing.JOptionPane;
 import cb05.beans.EntradaSalidaBeans;
-import cb05.ConB1B2;
+import cb05.bs.ConB1B2;
 
 /**
  *
@@ -188,7 +188,7 @@ public class EntradaSalida extends javax.swing.JFrame {
         esNumero.setEntradaNumero(numero);
         
         ConB1B2 resultado = new ConB1B2();
-        lbResultadoFinal.setText(resultado.hacerCalculo());
+        //lbResultadoFinal.setText(resultado.hacerCalculo());
     }//GEN-LAST:event_btCalcularActionPerformed
 
     private void btTerminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTerminarActionPerformed
