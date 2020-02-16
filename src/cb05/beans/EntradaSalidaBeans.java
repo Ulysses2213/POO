@@ -12,7 +12,7 @@ package cb05.beans;
 public class EntradaSalidaBeans {
     int B1;
     int B2;
-    int entradaNumero;
+    String entradaNumero;
 
     public int getB1() {
         return B1;
@@ -30,11 +30,11 @@ public class EntradaSalidaBeans {
         this.B2 = B2;
     }
 
-    public int getEntradaNumero() {
+    public String getEntradaNumero() {
         return entradaNumero;
     }
 
-    public void setEntradaNumero(int entradaNumero) {
+    public void setEntradaNumero(String entradaNumero) {
         this.entradaNumero = entradaNumero;
     }
     

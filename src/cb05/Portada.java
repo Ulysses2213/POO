@@ -16,6 +16,7 @@ public class Portada extends javax.swing.JFrame {
     
     public Portada() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -109,8 +110,8 @@ public class Portada extends javax.swing.JFrame {
     }//GEN-LAST:event_btSalirActionPerformed
 
     private void btContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContinuarActionPerformed
-        EntradaSalida es = new EntradaSalida();
-        es.setVisible(true);  //Se hace visible la pantalla de entrada/salida
+        EntradaSalida vistaES = new EntradaSalida();
+        vistaES.setVisible(true);  //Se hace visible la pantalla de entrada/salida
         dispose(); //Cerrar la ventana anterior
     }//GEN-LAST:event_btContinuarActionPerformed
 
