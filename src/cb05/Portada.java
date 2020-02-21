@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cb05;
+import cb05.Presentacion;
 
 /**
  *
@@ -33,6 +34,7 @@ public class Portada extends javax.swing.JFrame {
         lbIntegrantes = new javax.swing.JLabel();
         btContinuar = new javax.swing.JButton();
         btSalir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONVERTIDOR DE BASES NUMERICAS");
@@ -47,7 +49,7 @@ public class Portada extends javax.swing.JFrame {
 
         lbProyecto.setText("<html>CONVERTIDOR DE BASES <br> <center>EQUIPO #5</center> </html>");
 
-        lbIntegrantes.setText("<html><center>INTEGRANTES:</center><ul><li>Núñez Hernandez Ulises</li><li>Demian</li><li>Emilio</li></ul></html>");
+        lbIntegrantes.setText("<html><center>INTEGRANTES:</center><ul><li>Gomez Hernández Enrique</li><li>Madrigal Santiago Emilio Abraham</li><li>Nuñez Hernandez Ulises</li><li>Tacuba Salmeron Briseida</li>  </ul></html>");
 
         btContinuar.setText("CONTINUAR");
         btContinuar.addActionListener(new java.awt.event.ActionListener() {
@@ -63,38 +65,49 @@ public class Portada extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cb05/resources/logo-ipn-blanco.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(lbUPIICSA))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(lbProyecto)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(btSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addComponent(btContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbIntegrantes)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(102, 102, 102)
-                            .addComponent(lbUPIICSA))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(146, 146, 146)
-                            .addComponent(lbProyecto))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbIntegrantes))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(lbUPIICSA, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(lbUPIICSA, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)))
                 .addGap(18, 18, 18)
                 .addComponent(lbProyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(31, 31, 31)
                 .addComponent(lbIntegrantes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -110,8 +123,8 @@ public class Portada extends javax.swing.JFrame {
     }//GEN-LAST:event_btSalirActionPerformed
 
     private void btContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContinuarActionPerformed
-        EntradaSalida vistaES = new EntradaSalida();
-        vistaES.setVisible(true);  //Se hace visible la pantalla de entrada/salida
+        Presentacion pres = new Presentacion();
+        pres.setVisible(true);//Se hace visible la pantalla de presentacion
         dispose(); //Cerrar la ventana anterior
     }//GEN-LAST:event_btContinuarActionPerformed
 
@@ -153,6 +166,7 @@ public class Portada extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btContinuar;
     private javax.swing.JButton btSalir;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbIntegrantes;
     private javax.swing.JLabel lbProyecto;
     private javax.swing.JLabel lbUPIICSA;
